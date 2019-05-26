@@ -1,0 +1,28 @@
+---
+language: python
+services: docker
+
+env:
+  matrix:
+    - MOLECULE_DISTRO: centos7
+      MOLECULE_DOCKER_COMMAND: /usr/lib/systemd/systemd
+    - MOLECULE_DISTRO: centos6
+      MOLECULE_DOCKER_COMMAND: /usr/lib/systemd/systemd
+
+install:
+  # installing dependencies for molecule
+  - pip install molecule docker
+
+before_script:
+  # getting into proper role directory
+  - pwd
+  - find . ls 
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: master
+...

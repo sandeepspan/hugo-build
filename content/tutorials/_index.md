@@ -11,7 +11,7 @@ Welcome,
 
 Have a great experience with some helpful tutorials here.
 
-- [Tutorial 0001](tutorial-0001/)
+- [Openshift Origin on Vagrant](openshift-origin-on-vagrant/)
 - [Tutorial 0002](tutorial-0002/)
 
 ---
